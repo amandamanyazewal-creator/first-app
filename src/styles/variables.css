@@ -1,0 +1,51 @@
+:root {
+    /* ---- Color: "schema" palette ----
+       Ink   = table header / primary text
+       Canvas = blueprint paper background
+       Blue  = relation lines, links, primary actions
+       Amber = keys / index / highlight accents
+       Green = status / availability
+    */
+    --ink: #050c11;
+    --ink-soft: #4b5560;
+    --ink-faint: #7c8790;
+    --canvas: rgb(241, 239, 230);
+    --surface: #ffffff;
+    --line: #dcdfd6;
+    --line-strong: #b9beb2;
+    --key-blue: #3652a3;
+    --key-blue-dark: #283f80;
+    --index-amber: #e2a63b;
+    --status-green: #3b8564;
+    --danger: #b8443a;
+  
+    /* Type */
+    --font-display: "Space Grotesk", "Segoe UI", sans-serif;
+    --font-body: "IBM Plex Sans", "Segoe UI", sans-serif;
+    --font-mono: "IBM Plex Mono","sans-serif";
+  
+    /* Scale */
+    --step-xs: clamp(0.78rem, 0.75rem + 0.15vw, 0.86rem);
+    --step-sm: clamp(0.92rem, 0.89rem + 0.15vw, 1rem);
+    --step-base: clamp(1rem, 0.97rem + 0.2vw, 1.1rem);
+    --step-md: clamp(1.2rem, 1.1rem + 0.5vw, 1.4rem);
+    --step-lg: clamp(1.6rem, 1.4rem + 1vw, 2.1rem);
+    --step-xl: clamp(2.2rem, 1.8rem + 2vw, 3.4rem);
+    --step-2xl: clamp(2.8rem, 2.1rem + 3.5vw, 4.6rem);
+  
+    /* Space */
+    --sp-1: 0.4rem;
+    --sp-2: 0.8rem;
+    --sp-3: 1.2rem;
+    --sp-4: 1.8rem;
+    --sp-5: 2.6rem;
+    --sp-6: 4rem;
+    --sp-7: 6rem;
+    --sp-8: 8.5rem;
+  
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --container: 1180px;
+    --shadow-card: 0 1px 2px rgba(16, 24, 32, 0.04), 0 10px 24px -14px rgba(16, 24, 32, 0.18);
+  }
+  

@@ -1,0 +1,23 @@
+.aoudioe{
+    background-color: aqua;
+}
+.add{
+    background-color: green;
+    padding: 2px 5px;
+    font-style: 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+.remov{
+    background-color:rgb(250, 21, 21);
+    padding: 2px 5px;
+    font-style: 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+audio{
+    width: 100%;
+    
+}
