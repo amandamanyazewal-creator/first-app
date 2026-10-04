@@ -1,9 +1,5 @@
 import { Link } from "react-router-dom";
 
-/**
- * Shared button. Renders a <Link> for internal routes, an <a> for external
- * URLs (http/mailto/tel), or a <button> when given onClick with no href/to.
- */
 export default function Button({
   children,
   to,
@@ -15,6 +11,7 @@ export default function Button({
 }) {
   const className = `btn btn--${variant}${small ? " btn--sm" : ""}`;
 
+  // Internal React Router link
   if (to) {
     return (
       <Link to={to} className={className} onClick={onClick}>
@@ -23,24 +20,24 @@ export default function Button({
     );
   }
 
+  // External link
   if (href) {
     const external = /^https?:\/\//.test(href);
+
     return (
-      <>
-        <a
-          href={href}
-          className={className}
-          onClick={onClick}
-          target={external ? "_blank" : undefined}
-          rel={external ? "noopener noreferrer" : undefined}
-        >
-          {" "}
-          {children}
-        </a>
-      </>
+      <a
+        href={href}
+        className={className}
+        onClick={onClick}
+        target={external ? "_blank" : undefined}
+        rel={external ? "noopener noreferrer" : undefined}
+      >
+        {children}
+      </a>
     );
   }
 
+  // Normal button
   return (
     <button type={type} className={className} onClick={onClick}>
       {children}

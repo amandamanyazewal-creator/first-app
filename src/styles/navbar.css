@@ -1,141 +1,385 @@
+/* ========================================
+   NAVBAR
+======================================== */
+
 .navbar {
   position: sticky;
   top: 0;
   z-index: 50;
+
+  width: 100%;
+
   background: #fcfbf5;
+
   backdrop-filter: blur(8px);
+
   border-bottom: 1px solid var(--line);
+
+  box-sizing: border-box;
 }
+
+
+/* ========================================
+   NAVBAR INNER
+======================================== */
 
 .navbar__inner {
   display: flex;
+
   align-items: center;
+
   justify-content: space-between;
+
+  min-height: 64px;
+
   padding-top: var(--sp-2);
   padding-bottom: var(--sp-2);
-  min-height: 64px;
+
+  box-sizing: border-box;
 }
+
+
+/* ========================================
+   BRAND
+======================================== */
 
 .navbar__brand {
   display: flex;
+
   align-items: center;
+
   gap: 0.6em;
+
   font-family: var(--font-display);
+
   font-weight: 600;
+
   font-size: var(--step-md);
+
   color: var(--ink);
+
+  text-decoration: none;
+
+  white-space: nowrap;
+
+  flex-shrink: 0;
 }
+
+
+/* Logo image */
+
+.navbar__brand img {
+  width: 50px;
+  height: 50px;
+
+  object-fit: contain;
+
+  display: block;
+
+  flex-shrink: 0;
+}
+
+
+/* Green dot */
 
 .navbar__brand-dot {
   width: 9px;
   height: 9px;
+
   border-radius: 50%;
+
   background: var(--status-green);
-  box-shadow: 0 0 0 3px rgba(59, 133, 100, 0.18);
+
+  box-shadow:
+    0 0 0 3px rgba(59, 133, 100, 0.18);
+
+  flex-shrink: 0;
 }
+
+
+/* ========================================
+   NAVIGATION
+======================================== */
 
 .navbar__links {
   display: flex;
+
   align-items: center;
+
   gap: var(--sp-4);
+
   font-family: var(--font-mono);
+
   font-size: var(--step-xs);
+
   letter-spacing: 0.04em;
+
   text-transform: uppercase;
+
+  white-space: nowrap;
 }
 
-.navbar__links a {
+
+/* Navigation links */
+
+.navbar__links > a {
   position: relative;
+
+  display: inline-block;
+
   color: var(--ink-soft);
+
   padding: 0.3em 0.05em;
+
+  text-decoration: none;
+
+  white-space: nowrap;
 }
 
-.navbar__links a::after {
+
+/* Underline */
+
+.navbar__links > a::after {
   content: "";
+
   position: absolute;
+
   left: 0;
+
   bottom: -2px;
-  width: 0%;
+
+  width: 0;
+
   height: 2px;
+
   background: var(--key-blue);
+
   transition: width 0.18s ease;
 }
 
-.navbar__links a:hover,
-.navbar__links a.is-active {
-  color:rgb(42, 19, 250);
+
+/* Hover / active */
+
+.navbar__links > a:hover,
+.navbar__links > a.is-active {
+  color: rgb(42, 19, 250);
 }
 
-.navbar__links a.is-active::after,
-.navbar__links a:hover::after {
+
+/* Active underline */
+
+.navbar__links > a.is-active::after,
+.navbar__links > a:hover::after {
   width: 100%;
 }
 
+
+/* ========================================
+   CONTACT BUTTON
+======================================== */
+
 .navbar__cta {
   margin-left: var(--sp-2);
+
+  flex-shrink: 0;
+
+  white-space: nowrap;
 }
+
+
+/* ========================================
+   MOBILE MENU BUTTON
+======================================== */
 
 .navbar__toggle {
   display: none;
-  background: none;
-  border: 1px solid var(--line-strong);
-  border-radius: var(--radius-sm);
-  width: 40px;
-  height: 40px;
+
   align-items: center;
+
   justify-content: center;
+
+  width: 40px;
+
+  height: 40px;
+
+  padding: 0;
+
+  background: transparent;
+
+  border: 1px solid var(--line-strong);
+
+  border-radius: var(--radius-sm);
+
   cursor: pointer;
+
+  flex-shrink: 0;
 }
+
+
+/* Hamburger */
 
 .navbar__toggle span,
 .navbar__toggle span::before,
 .navbar__toggle span::after {
   content: "";
+
   display: block;
-  width: 18px;
-  height: 2px;
-  background: var(--ink);
+
   position: relative;
-  transition: transform 0.2s ease, opacity 0.2s ease;
+
+  width: 18px;
+
+  height: 2px;
+
+  background: var(--ink);
+
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
 }
 
-.navbar__toggle span::before { position: absolute; top: -6px; }
-.navbar__toggle span::after { position: absolute; top: 6px; }
+
+.navbar__toggle span::before {
+  position: absolute;
+
+  top: -6px;
+
+  left: 0;
+}
+
+
+.navbar__toggle span::after {
+  position: absolute;
+
+  top: 6px;
+
+  left: 0;
+}
+
+
+/* ========================================
+   TABLET / MOBILE
+======================================== */
 
 @media (max-width: 860px) {
-  .navbar__toggle { display: inline-flex; }
+
+  /* Show hamburger */
+
+  .navbar__toggle {
+    display: inline-flex;
+  }
+
+
+  /* Hide/show navigation */
 
   .navbar__links {
     position: absolute;
-    top: 64px;
+
+    top: 100%;
+
     left: 0;
+
     right: 0;
+
+    width: 100%;
+
+    box-sizing: border-box;
+
     background: var(--canvas);
+
     border-bottom: 1px solid var(--line);
+
     flex-direction: column;
+
     align-items: flex-start;
+
     gap: 0;
-    padding: var(--sp-2) var(--sp-4) var(--sp-4);
+
+    padding:
+      var(--sp-2)
+      var(--sp-4)
+      var(--sp-4);
+
     transform: translateY(-8px);
+
     opacity: 0;
+
     pointer-events: none;
-    transition: opacity 0.18s ease, transform 0.18s ease;
+
+    transition:
+      opacity 0.18s ease,
+      transform 0.18s ease;
   }
+
+
+  /* Open menu */
 
   .navbar__links.is-open {
     opacity: 1;
+
     transform: translateY(0);
+
     pointer-events: auto;
   }
 
-  .navbar__links a {
-    padding: 0.7em 0;
+
+  /* Mobile links */
+
+  .navbar__links > a {
+    display: block;
+
     width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 0.7em 0;
+
     border-bottom: 1px dashed var(--line);
   }
 
+
+  /* Contact button */
+
   .navbar__cta {
+    width: 100%;
+
     margin-left: 0;
+
     margin-top: var(--sp-2);
+
+    box-sizing: border-box;
+  }
+}
+
+
+/* ========================================
+   SMALL PHONES
+======================================== */
+
+@media (max-width: 480px) {
+
+  .navbar__inner {
+    min-height: 58px;
+  }
+
+
+  .navbar__brand img {
+    width: 42px;
+
+    height: 42px;
+  }
+
+
+  .navbar__brand {
+    font-size: 1rem;
+
+    gap: 0.4em;
+  }
+
+
+  .navbar__brand-dot {
+    width: 7px;
+
+    height: 7px;
   }
 }
