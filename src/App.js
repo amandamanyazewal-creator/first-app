@@ -16,6 +16,7 @@ import Login from "./pages/Login.jsx";
 import Account from "./pages/Account.jsx";
 import Logout from "./pages/Logout.jsx";
 import NotFound from "./pages/NotFound.jsx";
+import SoundGallery from "./pages/SoundGallery.jsx";
 
 import "./App.css";
 
@@ -39,6 +40,7 @@ export default function App() {
           <Route path="/experience" element={<Experience />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/gallery" element={<Gallery />} />
+          <Route path="/sounds" element={<SoundGallery />} />
 
           {/* Authentication pages */}
           <Route path="/login" element={<Login />} />

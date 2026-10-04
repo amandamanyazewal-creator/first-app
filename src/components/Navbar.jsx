@@ -13,6 +13,7 @@ const LINKS = [
   { to: "/experience", label: "Experience" },
   { to: "/contact", label: "Contact" },
   { to: "/gallery", label: "Gallery" },
+  { to: "/sounds", label: "Sounds" },
 ];
 
 export default function Navbar() {
